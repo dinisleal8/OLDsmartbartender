@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="moldura"></div>
+        <div class="container">
+            <img class="img_select" id="img1" src="./Imgs/slider_select/1.png" alt="1">
+            <img class="img_select" id="img2" src="./Imgs/slider_select/2.png" alt="2">
+            <img class="img_select" id="img3" src="./Imgs/slider_select/3.png" alt="3">
+        </div>
+        
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                
+                <div>
+                    <img class="modal-content" id="img01">
+                    <div class="div_dados">
+                        <h1 class="text-content" id="title">Titlo</h1>
+                        <p class="text-content" id="desc">blablablalblablablablalbla</p>
+                        </div>
+                    
+                </div>
+        
+            </div>
+        </div>
+        
+    </body>
+
+    <script>
+        var modal = document.getElementById("myModal");
+        var img1 = document.getElementById("img1");
+        var img2 = document.getElementById("img2");
+        var img3 = document.getElementById("img3");
+        var modalImg = document.getElementById("img01");
+        var span = document.getElementsByClassName("close")[0];
+    
+        function openModal(imgSrc) {
+            modal.style.display = "block";
+            modalImg.src = imgSrc;
+        }
+    
+        function closeModal() {
+            modal.style.animation = "zoom-out 0.6s"; 
+    
+            setTimeout(function () {
+                modal.style.display = "none";
+                modal.style.animation = ""; 
+            }, 600); 
+        }
+    
+        img1.onclick = function () {
+            openModal(this.src);
+        }
+    
+        img2.onclick = function () {
+            openModal(this.src);
+        }
+    
+        img3.onclick = function () {
+            openModal(this.src,);
+        }
+    
+        span.onclick = function () {
+            closeModal();
+        }
+    
+        modal.onclick = function () {
+            closeModal();
+        }
+    </script>
+    
+</html>
