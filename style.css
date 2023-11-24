@@ -47,7 +47,6 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
 }
 
 .img-container {
@@ -103,10 +102,12 @@ img {
 .modal-content {
     background-color: #F4DCA1;
     margin: auto;
-    display: flex;
+    display: grid;
+    grid-template-columns: auto 1fr;
     flex-direction:column;
     align-items: center;
     justify-content: flex-start;
+    gap: 10px;
     padding: 20px;
     width: 70%;
     max-width: 300px; 
@@ -200,6 +201,10 @@ img {
     height: 250px;
     object-fit: cover;
     transition: transform 0.5s ease;
+}
+
+.modal-image{
+    grid-row: 1 / 2;
 }
 
 

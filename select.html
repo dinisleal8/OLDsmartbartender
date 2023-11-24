@@ -10,16 +10,21 @@
             <img class="img_select" id="img2" src="./Imgs/slider_select/2.png" alt="2">
             <img class="img_select" id="img3" src="./Imgs/slider_select/3.png" alt="3">
         </div>
+        <div class="container">
+            <img class="img_select" id="img4" src="./Imgs/slider_select/1.png" alt="4">
+            <img class="img_select" id="img5" src="./Imgs/slider_select/2.png" alt="5">
+            <img class="img_select" id="img6" src="./Imgs/slider_select/3.png" alt="6">
+        </div>
         
         <div id="myModal" class="modal">
             <div class="modal-content">
                 <span class="close">&times;</span>
                 
                 <div>
-                    <img class="modal-content" id="img01">
+                    <img class="modal-image" id="img01">
                     <div class="modal-text">
-                        <h2>Título da Imagem</h2>
-                        <p>Descrição da imagem...</p>
+                        <h2 id="titulo"></h2>
+                        <p id="desc"></p>
                      </div>
                     
                     
@@ -35,10 +40,15 @@
         var img1 = document.getElementById("img1");
         var img2 = document.getElementById("img2");
         var img3 = document.getElementById("img3");
+        var img4 = document.getElementById("img4");
+        var img5 = document.getElementById("img5");
+        var img6 = document.getElementById("img6");
         var modalImg = document.getElementById("img01");
+        var modalTitle = document.getElementById("titulo");
+        var modalDesc = document.getElementById("desc")
         var span = document.getElementsByClassName("close")[0];
     
-        function openModal(imgSrc) {
+        function openModal(modalImg,modalTitle,modalDesc) {
             modal.style.display = "block";
             modalImg.src = imgSrc;
         }
@@ -53,7 +63,11 @@
         }
     
         img1.onclick = function () {
-            openModal(this.src);
+            openModal(this.src,
+            "BOAS PESSOAL",
+            "DAQUI O FEROMONAS!"
+            );
+    
         }
     
         img2.onclick = function () {
@@ -63,7 +77,22 @@
         img3.onclick = function () {
             openModal(this.src,);
         }
+
+        img4.onclick = function () {
+            openModal(this.src,
+            "BOAS PESSOAL",
+            "DAQUI O FEROMONAS!"
+            );
     
+        }
+    
+        img5.onclick = function () {
+            openModal(this.src);
+        }
+    
+        img6.onclick = function () {
+            openModal(this.src,);
+        }
         span.onclick = function () {
             closeModal();
         }
