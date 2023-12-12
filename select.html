@@ -1,67 +1,73 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <div class="container">
-            <img class="closemodal-img" src="./Imgs/slider_select/1.png" onclick="openModal('./Imgs/slider_select/1.png', 'BEBIDA 1', 'maltinha bora ficar bue bebada')" alt="Image 1">
-            <img class="closemodal-img" src="./Imgs/slider_select/2.png" onclick="openModal('./Imgs/slider_select/2.png', 'Title 2', 'Description 2')" alt="Image 2">
-            <img class="closemodal-img" src="./Imgs/slider_select/3.png" onclick="openModal('./Imgs/slider_select/3.png', 'Title 3', 'Description 3')" alt="Image 3">
-        </div>
-        <div class="container">
-            <img class="closemodal-img" src="./Imgs/slider_select/1.png" onclick="openModal('./Imgs/slider_select/1.png', 'Title 1', 'Description 1')" alt="Image 1">
-            <img class="closemodal-img" src="./Imgs/slider_select/2.png" onclick="openModal('./Imgs/slider_select/2.png', 'Title 2', 'Description 2')" alt="Image 2">
-            <img class="closemodal-img" src="./Imgs/slider_select/3.png" onclick="openModal('./Imgs/slider_select/3.png', 'Title 3', 'Description 3')" alt="Image 3">
-        </div>
-  <!-- Modal -->
-  <div id="myModal" class="modal">
-    <div class="modal-content">
-      <img id="modalImage" src="" alt="">
-      <div class="text-container">
-        <h2 id="modalTitle"></h2>
-        <p id="modalDescription"></p>
-        <button class="botao-home">Seguir</button>
-      </div>
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <img class="closemodal-img" src="./Imgs/slider_select/1.png" onclick="openModal('./Imgs/slider_select/1.png', 'BEBIDA 1', 'maltinha bora ficar bue bebada', '/drink1/')" alt="Image 1">
+        <img class="closemodal-img" src="./Imgs/slider_select/2.png" onclick="openModal('./Imgs/slider_select/2.png', 'Title 2', 'Description 2', '/drink2/')" alt="Image 2">
+        <img class="closemodal-img" src="./Imgs/slider_select/3.png" onclick="openModal('./Imgs/slider_select/3.png', 'Title 3', 'Description 3', '/drink3/')" alt="Image 3">
     </div>
-  </div>
-
-    </body>
+    <div class="container">
+        <img class="closemodal-img" src="./Imgs/slider_select/1.png" onclick="openModal('./Imgs/slider_select/1.png', 'Title 1', 'Description 1', '/drink1/')" alt="Image 1">
+        <img class="closemodal-img" src="./Imgs/slider_select/2.png" onclick="openModal('./Imgs/slider_select/2.png', 'Title 2', 'Description 2', '/drink2/')" alt="Image 2">
+        <img class="closemodal-img" src="./Imgs/slider_select/3.png" onclick="openModal('./Imgs/slider_select/3.png', 'Title 3', 'Description 3', '/drink3/')" alt="Image 3">
+    </div>
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <img id="modalImage" src="" alt="">
+            <div class="text-container">
+                <h2 id="modalTitle"></h2>
+                <p id="modalDescription"></p>
+                <button class="botao-home" onclick="navigateTo()">Seguir</button>
+            </div>
+        </div>
+    </div>
 
     <script>
-  // Function to open the modal and populate its content
-  function openModal(imageSrc, title, description) {
-      var modal = document.getElementById("myModal");
-      var modalImage = document.getElementById("modalImage");
-      var modalTitle = document.getElementById("modalTitle");
-      var modalDescription = document.getElementById("modalDescription");
-      var modalText = document.getElementById("modalText");
+        // Function to open the modal and populate its content
+        function openModal(imageSrc, title, description, link) {
+            var modal = document.getElementById("myModal");
+            var modalImage = document.getElementById("modalImage");
+            var modalTitle = document.getElementById("modalTitle");
+            var modalDescription = document.getElementById("modalDescription");
 
-      modal.style.display = "block";
-      modalImage.src = imageSrc;
-      modalTitle.textContent = title;
-      modalDescription.textContent = description;
-      modalText.textContent = "Custom text for the image";
-    }
+            modal.style.display = "block";
+            modalImage.src = imageSrc;
+            modalTitle.textContent = title;
+            modalDescription.textContent = description;
 
-    // Function to close the modal
-    function closeModal() {
-      var modal = document.getElementById("myModal");
-      modal.style.animation = "zoom-out 0.6s"; 
-      setTimeout(function () {
+            // Set the onclick attribute for the button dynamically
+            document.querySelector(".botao-home").onclick = function() {
+                window.location.href = link;
+            };
+        }
+
+        // Function to close the modal
+        function closeModal() {
+            var modal = document.getElementById("myModal");
+            modal.style.animation = "zoom-out 0.6s";
+            setTimeout(function () {
                 modal.style.display = "none";
-                modal.style.animation = ""; 
-            }, 600); 
-    }
+                modal.style.animation = "";
+            }, 600);
+        }
 
-    // Close the modal when clicking outside of it
-    window.onclick = function(event) {
-      var modal = document.getElementById("myModal");
-      if (event.target == modal) {
-        closeModal();
-        
-      }
-    }
+        // Close the modal when clicking outside of it
+        window.onclick = function(event) {
+            var modal = document.getElementById("myModal");
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+
+        // Function to navigate to the link
+        function navigateTo() {
+            closeModal(); // Close the modal before navigating
+        }
     </script>
-    
+
+</body>
 </html>
