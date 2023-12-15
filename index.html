@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="{% static 'style.css' %}">
     </head>
     <body>
         <div class="moldura"></div>
         <div class="home">
             <div class="logo-home">
-                <img src="Imgs/logo.png" style="width: 300px;">
-                <button class="botao-home" onclick="window.location.href = 'select.html'">COMEÇAR</button>
+                <img src="{% static 'Imgs/logo.png' %}" style="width: 300px;">
+                <button class="botao-home" onclick="window.location.href = /select/ ">COMEÇAR</button>
             </div>
         </div>
-    </body>
+    </body> 
 </html>
