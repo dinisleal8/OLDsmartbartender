@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="./style.css">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 <body>
     <div class="container">
-        <img class="closemodal-img" src="./Imgs/slider_select/1.png" onclick="openModal('Cola Crush', 'Alta Cena', './Imgs/slider_select/1.png', '/drink1/')" alt="Image 1">
-        <img class="closemodal-img" src="./Imgs/slider_select/2.png"onclick="openModal('Cuba Libre Tropical', 'Description 2', './Imgs/slider_select/2.png', '/drink2/')" alt="Image 2">
-        <img class="closemodal-img" src="./Imgs/slider_select/3.png" onclick="openModal('Laranjada Tropical', 'Description 3', './Imgs/slider_select/3.png', '/drink3/')" alt="Image 3">
+        <img class="closemodal-img" src="{% static 'Imgs/slider_select/1.png' %}" onclick="openModal('Cola Crush', 'Alta Cena', '{% static 'Imgs/slider_select/1.png' %}', '{% url 'drink1' %}')" alt="Image 1">
+        <img class="closemodal-img" src="{% static 'Imgs/slider_select/2.png' %}" onclick="openModal('Cuba Libre Tropical', 'Description 2', '{% static 'Imgs/slider_select/2.png' %}', '{% url 'drink2' %}')" alt="Image 2">
+        <img class="closemodal-img" src="{% static 'Imgs/slider_select/3.png' %}" onclick="openModal('Laranjada Tropical', 'Description 3', '{% static 'Imgs/slider_select/3.png' %}', '{% url 'drink3' %}')" alt="Image 3">
     </div>
     <div class="container">
-        <img class="closemodal-img" src="./Imgs/slider_select/4.png" onclick="openModal('Sex on the Beach', 'Description 1', './Imgs/slider_select/4.png', '/drink4/')" alt="Image 1">
-        <img class="closemodal-img" src="./Imgs/slider_select/5.png" onclick="openModal('Pêssego Sunrise', 'Description 2', './Imgs/slider_select/5.png', '/drink5/')" alt="Image 2">
-        <img class="closemodal-img" src="./Imgs/slider_select/6.png" onclick="openModal('Vodka Peach Fizz', 'Description 3', './Imgs/slider_select/6.png', '/drink6/')" alt="Image 3">
+        <img class="closemodal-img" src="{% static 'Imgs/slider_select/4.png' %}" onclick="openModal('Sex on the Beach', 'Description 1', '{% static 'Imgs/slider_select/4.png' %}', '{% url 'drink4' %}')" alt="Image 1">
+        <img class="closemodal-img" src="{% static 'Imgs/slider_select/5.png' %}" onclick="openModal('Pêssego Sunrise', 'Description 2', '{% static 'Imgs/slider_select/5.png' %}', '{% url 'drink5' %}')" alt="Image 2">
+        <img class="closemodal-img" src="{% static 'Imgs/slider_select/6.png' %}" onclick="openModal('Vodka Peach Fizz', 'Description 3', '{% static 'Imgs/slider_select/6.png' %}', '{% url 'drink6' %}')" alt="Image 3">
     </div>
 
     <!-- Modal -->
     <div id="myModal" class="modal">
         <div class="modal-content">
-            <img style="height: 150px; width: 150px;"id="modalImage" src="" alt="">
+            <img style="height: 150px; width: 150px;" id="modalImage" src="" alt="">
             <div class="text-container">
                 <h2 id="modalTitle"></h2>
                 <!-- <p id="modalDescription"></p> -->
